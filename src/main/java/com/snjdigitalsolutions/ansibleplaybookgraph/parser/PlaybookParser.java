@@ -20,7 +20,7 @@ public class PlaybookParser {
         this.parsedFileCollector = parsedFileCollector;
     }
 
-    public List<Play> parsePlaybook(File playbook)
+    public List<Play> parsePlaybook(File playbook, Boolean basePlay)
     {
         List<Play> plays = new ArrayList<Play>();
         if (!parsedFileCollector.hasFileBeenParsed(playbook))
@@ -42,12 +42,14 @@ public class PlaybookParser {
                             //create play
                             currentPlay = new Play();
                             currentPlay.setName(inLine.substring("- name:".length()).trim());
+                            currentPlay.setFilePath(playbook.getPath());
+                            currentPlay.setBasePlay(basePlay);
                             plays.add(currentPlay);
                         }
                         else if (inLine.startsWith("  ansible.builtin.import_playbook:"))
                         {
                             File childPlaybook = new File(playbook.getParentFile(), inLine.split(":")[1].trim());
-                            currentPlay.setChildPLays(parsePlaybook(childPlaybook));
+                            currentPlay.setChildPlays(parsePlaybook(childPlaybook, false));
                         }
                         else if (inLine.startsWith("  hosts:"))
                         {

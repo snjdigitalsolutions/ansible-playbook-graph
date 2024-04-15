@@ -20,7 +20,7 @@ class PlaybookParserTest extends AbstractTest {
         File basePlaybook = new File("src/test/resources/exampledir/baseplay.yaml");
 
         // Act
-        List<Play> plays = playbookParser.parsePlaybook(basePlaybook);
+        List<Play> plays = playbookParser.parsePlaybook(basePlaybook, true);
 
         // Assert
         assertEquals(2, plays.size());
@@ -58,7 +58,7 @@ class PlaybookParserTest extends AbstractTest {
         // Act
         for (File file : collectedFiles)
         {
-            plays.addAll(playbookParser.parsePlaybook(file));
+            plays.addAll(playbookParser.parsePlaybook(file, true));
         }
 
         // Assert

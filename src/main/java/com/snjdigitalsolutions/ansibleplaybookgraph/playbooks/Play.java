@@ -11,6 +11,8 @@ import java.util.List;
 public class Play {
 
     private String name;
+    private String filePath;
+    private Boolean basePlay;
     private List<Play> childPlays;
     private final List<String> hosts;
     private final List<Task> tasks;
@@ -31,12 +33,5 @@ public class Play {
     {
         tasks.add(task);
     }
-
-    public void setChildPLays(List<Play> plays)
-    {
-        this.childPlays = plays;
-    }
-
-
 
 }
