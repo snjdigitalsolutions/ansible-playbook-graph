@@ -1,0 +1,14 @@
+group1:
+  hosts:
+    192.168.88.5:
+    192.168.88.8:
+
+group2:
+  hosts:
+    192.168.88.12:
+    192.168.88.55:
+
+group3:
+  children:
+    group1:
+    group2:

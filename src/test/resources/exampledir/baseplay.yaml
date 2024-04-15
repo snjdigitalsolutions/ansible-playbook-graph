@@ -1,0 +1,11 @@
+---
+- name: Base Play
+  hosts: basehosts
+
+  tasks:
+    - name: Base task 1
+
+    - name: Base task 2
+
+- name: Perform Dir 1
+  ansible.builtin.import_playbook: dir1/dir1play.yaml

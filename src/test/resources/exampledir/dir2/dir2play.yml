@@ -1,0 +1,8 @@
+---
+- name: Dir 2 Play
+  hosts: dir2host
+
+  tasks:
+    - name: Dir2 Task 1
+
+    - name: Dir2 Task 2
