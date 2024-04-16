@@ -13,6 +13,7 @@ public class Play {
     private String name;
     private String filePath;
     private Boolean basePlay;
+    private String nodeID;
     private List<Play> childPlays;
     private final List<String> hosts;
     private final List<Task> tasks;

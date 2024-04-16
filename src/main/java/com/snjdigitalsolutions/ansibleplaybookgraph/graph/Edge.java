@@ -5,10 +5,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter
+@Setter
 public class Edge {
 
-    private final String source;
-    private final String target;
+    private String source = null;
+    private String target = null;
+
+    public Edge(String source)
+    {
+        this.source = source;
+    }
 
     public Edge(String source, String target)
     {
